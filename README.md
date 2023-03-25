@@ -1,66 +1,177 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Overview - Social Network
+Welcome to social network developed with **Laravel** and **Vue**. This project uses **Fortify** package for authentication, Vue components for notifications and friend requests, **axios** for communication between components Vue, database and Laravel. Also, take advantage of architecture **API RESTful**. Also, This project includes *Eloquent*, an object-relational mapper (ORM) powerful by Laravel
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The main things to do: login, register, edit your profile, upload a new profile photo, send friend requests, send messages, chat, friends list, search profiles and manage your account.   
 
-## About Laravel
+# Requirements
+* PHP 8.0
+* Microsoft SQL Server 2019 Express
+* Lastest version
+    * Composer
+    * Node.js
+    * npm
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Note: 
+* if you use another SMDB you may look the official documentation for laravel and setup new params to *.env* file. [Read more](https://laravel.com/docs/9.x/database "go documentation")
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* if you want to config SQL Server for this project you may follow next steps in this resource [Read more](https://learn.microsoft.com/es-es/sql/connect/php/microsoft-php-driver-for-sql-server?view=sql-server-ver16 "go resource") 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* if you want to config authentication by login for SQL Server you may follow next resource. [Read more](https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-login?view=sql-server-ver16 "go resource")
 
-## Learning Laravel
+# Get start
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### **Download or clone this repository**
+```bash
+git clone https://github.com/olmos-dev/social-network.git
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### **Install**
+Install vendor folder
+```bash
+composer update
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Install node modules
+```bash
+npm install
+```
+### **Config database**
+1. Create a new database for this project
 
-## Laravel Sponsors
+2. Create  a new **.env** file
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3. Now setup params and your database connection in **.env** file 
+    ```bash
+    DB_CONNECTION=sqlsrv
+    DB_HOST=127.0.0.1
+    DB_PORT=1433
+    DB_DATABASE=laravel
+    DB_USERNAME=developer
+    DB_PASSWORD=12345678
+    ```
+4. You may migrate database tables
+    ```bash
+    php artisan migrate
+    ```
+5. You may run seeders
+    ```bash
+    php artisan db:seed
+    ```
+### **Key generate**
+you should assign a new key generate for this app
+```bash
+php artisan key:generate
+```
 
-### Premium Partners
+# Run project
+run laravel server
+```bash
+php artisan serve
+```
+run npm server
+```bash
+npm run dev
+```
+Now open your browser and enjoy this web aplicaction!
+```bash
+http://127.0.0.1:8000/red-social
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Note: there are three profiles availables to login, or well you may register and create a new account.
 
-## Contributing
+|User|Password|
+|:----|-------:|
+|alberto@mail.com|12345678
+|ana@mail.com|12345678
+|wilson@mail.com|12345678
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Live preview
+click here [Social Network](https://agendacontactos2.000webhostapp.com/ "go live demo")
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Build with
+* Laravel 9.1
+* Vue 3
+* PHP 8.0
+* Bootstrap 4.6
+* SQL Server Express Edition 
+* Javascript
 
-## License
+# Documentation
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Database Model
+
+![db](files/bd-workbench.png "Database - Social Network")
+
+### Relationships
+
+* *Users* model has one to one relationship with *Perfil* model
+
+* *Perfil* model has one to one relationship with *idioma*, *genero* and *pais* models
+
+* *Mensaje* model has one to many relationship with *Perfil* and *Users* models
+
+* *Amigo* model has one to many relationship with *Perfil* and *Users* models
+
+* *Notifications* default model by Laravel
+
+* *Buscar* model only used for filling field to search params by sort
+
+
+
+
+### Usage
+Home page
+![img1](files/inicio.png "Welcome to home page")
+
+Login 
+![img2](files/login.png "Login with email and password")
+
+Register
+![img3](files/registro1.png "Register - profile data")
+
+![img4](files/registro2.png "Register - accout")
+
+Community
+![img5](files/comunidad.png "Community - displays all profiles registered")
+
+Messages
+![img6](files/mensajes.png "Messages - Shows a panel from all your messages")
+
+Friends
+![img7](files/amigos.png "Friends - Here appears your friend list")
+
+Search
+![img8](files/buscar.png "Search - you may search profiles by advanced settings")
+
+Notifications
+![img9](files/notificaciones.png "Here appears your notificacions, by example: friend requests")
+
+Account 
+![img10](files/cuenta.png "You may manage your account such as edit profile and add new password")
+
+My profile
+![img11](files/mostrar-perfil.png "Here shows your profile. Also you may edit your profile and add a new profile photo")
+
+Edit profile
+![img12](files/editar1.png "Edit - profile data")
+
+![img13](files/editar2.png "Edit - about me")
+
+Edit profile photo
+![img14](files/foto-perfil.png "upload a new profile photo")
+
+Show profile
+![img15](files/ver-perfil.png "Shows a profile registered. Also, you may send a message or you may send friend request")
+
+Chat
+![img16](files/chatear.png "start to chat")
+
+# Author
+Alberto Olmos 
+
+# Licence
+This project is MIT licensed.
+
